@@ -177,4 +177,26 @@ const movies = [
   },
 ];
 
-export default movies;
+function MoviesList() {
+  return (
+    <>
+      {movies.map((item, index) => {
+        return (
+          <div>
+            <p>Title: {item.title} </p>
+            <p>Year: {item.year}</p>
+            <p>Runtime: {item.runtime}</p>
+            <p>
+              Genre:{" "}
+              {item.genres.map((genre, indGenre) => {
+                return <div>{genre}</div>;
+              })}
+            </p>
+          </div>
+        );
+      })}
+    </>
+  );
+}
+
+export default MoviesList;
